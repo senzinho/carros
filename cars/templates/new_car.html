@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}<!-- interessante essa tag que é contra ataques sql injection-->
+
+        <table>
+            {{ form.as_table }} <!-- definido como paragrafo-->
+        </table>
+
+        <input type="submit" value="cadastrar" class="btn btn-primary">
+
+    </form>
+
+{% endblock %}
